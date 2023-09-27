@@ -52,8 +52,8 @@ class HHV:
 
         ret = self.cam.MV_CC_GetIntValue("PayloadSize", stParam)
 
-        ret = self.cam.MV_CC_SetEnumValue("ExposureAuto", 2)
-        # ret = self.cam.MV_CC_SetIntValue("AutoExposureTimeLowerLimit", 10000)
+        # ret = self.cam.MV_CC_SetEnumValue("ExposureAuto", 2)
+        ret = self.cam.MV_CC_SetIntValue("AutoExposureTimeLowerLimit", 300000)
 
         # if ret != 0:
         #     print("Set ExposureAuto fail! ret[0x%x]" % ret)

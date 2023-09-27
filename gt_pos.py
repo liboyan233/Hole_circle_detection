@@ -6,6 +6,7 @@ def hole_pos(pixel_cor, K, rad_pixel, rad_gt, zc=None, end_mat=None):
     f = (K[0, 0] + K[1, 1])/2
     if zc is None:
         zc = f * rad_gt / rad_pixel
+        print('zc:', zc)
     pixel_cor_ = np.concatenate((pixel_cor.reshape(2, 1), np.array([[1]])), 0)
     cam_cor = np.linalg.inv(K) @ (zc * pixel_cor_)
     cam_cor = np.append(cam_cor, np.array([[1]]), axis=0)
